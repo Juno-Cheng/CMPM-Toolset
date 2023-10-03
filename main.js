@@ -1,5 +1,5 @@
 class Player{
-    constructor(characterNane = "Naruto"){
+    constructor(characterNane = "Naruto"){//Values cannot be set if not in parameter similar to python __init__
         this.name = characterNane;
         this.attributes = {
             strength: 0,
@@ -15,9 +15,11 @@ class Player{
         console.log("Rolling Dice...");
     }
 
-    printPlayer()
-
-
-
+    printPlayer(){
+        console.log(this.name);
+        console.log(this.attributes)
+    }
 
 }
+
+
