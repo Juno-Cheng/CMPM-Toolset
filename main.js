@@ -11,7 +11,12 @@ class Player{
             wisdom: 0,
             charisma: 0
         };
-        
+        let shuffledResult = shuffleArray(defaultAttributeScores);
+        for (const [key, value] of Object.entries(this.attributes)){
+            let attributeValue = shuffledResult.pop();
+            this.attributes[key] = attributeValue;
+        }
+
     }
 
     rollAttribute() {
@@ -23,6 +28,11 @@ class Player{
         console.log(this.attributes)
     }
 
+} 
+
+function diceRoller(times,sides) {
+
+    
 }
 
 
