@@ -11,6 +11,7 @@ class Player{
             wisdom: 0,
             charisma: 0
         };
+        
     }
 
     rollAttribute() {
@@ -24,6 +25,17 @@ class Player{
 
 }
 
+
+function shuffleArray(targetArray){
+    let shuffled = Array.from(targetArray); //Makes a copy so it doesn't change original
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = shuffled[i];
+        shuffled[i] = shuffled[j];
+        shuffled[j] = temp;
+    }
+    return shuffled;
+}
 
 const player01 = new Player();
 player01.printPlayer();
