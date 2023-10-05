@@ -19,13 +19,21 @@ class Player{
 
     }
 
-    rollAttribute() {
-        console.log("Rolling Dice...");
+    rollAttribute() {//Get highest 3 rolls out of 4
+        for (const key in this.attributes) {
+            let results = diceRoller(4, 6);
+            results.sort(function(a, b){return a - b}); // numeric sort w/ compare function
+            results.shift(); // remove lowest die roll
+            let sum = sumArrayElements(results); // sum the rolls
+            this.attributes[key] = sum;
+        }
     }
 
     printPlayer() {
-        console.log(this.name);
-        console.log(this.attributes)
+        console.log(`NAME: ${this.name}`);
+    for (const [key, value] of Object.entries(this.attributes)) {
+        console.log(`${key.slice(0, 3).toUpperCase()}: ${value}`);
+    }
     }
 
 } 
@@ -39,12 +47,7 @@ function diceRoller(times,sides) {
 }
 
 function sumArrayElements(array){
-    let sum = 0;
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
-    }
-    
-    return sum;
+    return array.reduce((total, currentNumber) => total + currentNumber); //Total/Current stores values
 }
 
 
