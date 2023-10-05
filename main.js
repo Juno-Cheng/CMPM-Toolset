@@ -31,8 +31,20 @@ class Player{
 } 
 
 function diceRoller(times,sides) {
+    let results = []
+    for (let i = 0; i < times; i++){
+        results.push(Math.floor(Math.random() * sides + 1));
+    }
+    return results;
+}
 
+function sumArrayElements(array){
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
     
+    return sum;
 }
 
 
