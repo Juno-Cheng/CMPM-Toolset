@@ -1,3 +1,5 @@
+const defaultAttributeScores = [15,14,13,12,10,8];
+
 class Player{
     constructor(characterNane = "Naruto"){//Values cannot be set if not in parameter similar to python __init__
         this.name = characterNane;
@@ -11,11 +13,11 @@ class Player{
         };
     }
 
-    rollAttribute(){
+    rollAttribute() {
         console.log("Rolling Dice...");
     }
 
-    printPlayer(){
+    printPlayer() {
         console.log(this.name);
         console.log(this.attributes)
     }
@@ -23,3 +25,9 @@ class Player{
 }
 
 
+const player01 = new Player();
+player01.printPlayer();
+
+const player02 = new Player('Son Goku');
+player02.rollAttribute();
+player02.printPlayer();
