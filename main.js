@@ -22,7 +22,7 @@ class Player{
     rollAttribute() {//Get highest 3 rolls out of 4
         for (const key in this.attributes) {
             let results = diceRoller(4, 6);
-            results.sort(function(a, b){return a - b}); // numeric sort w/ compare function
+            results.sort(function(a, b){return a - b}); // Int casting does not exist, we need to use - to show values are numeric
             results.shift(); // remove lowest die roll
             let sum = sumArrayElements(results); // sum the rolls
             this.attributes[key] = sum;
